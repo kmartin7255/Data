@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Datatrac Vertical Bars Interface</title>
+	
+	<style type="text/css">
+	.loading-overlay {
+		position: absolute;
+		z-index: 999;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		background: white;
+	}
+	.spinner {
+		width: 40px;
+		height: 40px;
+		position: absolute;
+		margin: -20px;
+		top: 50%;
+		left: 50%;
+	}
+	.double-bounce1, .double-bounce2 {
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		background-color: #0072BC;
+		opacity: 0.6;
+		position: absolute;
+		top: 0;
+		left: 0;
+		-webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+		animation: sk-bounce 2.0s infinite ease-in-out;
+	}
+	.double-bounce2 {
+		-webkit-animation-delay: -1.0s;
+		animation-delay: -1.0s;
+	}
+	@keyframes sk-bounce {
+		0%, 
+		100% {
+			-webkit-transform: scale(0.0);
+			transform: scale(0.0);
+		}
+		50% {
+			-webkit-transform: scale(1.0);
+			transform: scale(1.0);
+		}
+	}
+	</style>
+		
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Poppins:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/styles.css?v=1.01" media="all" />
+	
+</head>
+
+<body>
+
+<div class="dt_api app_wrap">
+
+	<div id="products_wrap" class="row products_wrap">
+	
+		<div id="product_template" class="productcontainer template" data-market-id="MARKET_ID" data-total-search-count="0">
+			<h3 class="prodname">PROD NAME</h3>
+			<div class="badge hide">
+				<div class="inner">
+					<div class="icon_wrap"><img alt="product-icon" class="icon icon_img" src=""></div>
+					<div class="badge_text_wrap">
+							<h3 class="badge_text fit"><span class="highlight"><span class="savings_amt">999</span></span> <span class="save_up_to">Lifetime Savings:</span></h3>
+					</div><!-- badge_text_wrap -->
+				</div><!-- inner -->
+			</div><!-- badge -->
+			<div class="rate_bars">
+				<div class="rate_bar fi"></div>
+				<div class="rate_bar mkt"></div>
+			</div><!-- rate_bars -->
+			<div class="rate_bars_labels">
+				<div class="bar_label fi"><span class="fi_shortname"></span><span>: </span><span class="rate_fi">0.0%</span></div>
+				<div class="bar_label market"><span class="mtk_name_long"></span><span> avg: </span><span class="rate_mkt">0.0%</span></div>
+			</div><!-- rate_bars_labels -->
+			<div class="lower">
+				<p><a class="apply_now button" href="http://solutions.datatrac.net/marqueeyourapplication" target="_blank">APPLY NOW</a></p>
+			</div><!-- lower -->
+			
+		</div><!-- .productcontainer -->
+	
+	</div><!-- .row -->
+
+	<div class="row products_nav">
+		<div class="prod_classes_wrap">
+			<div class="market_ids">
+				<label for="market_id">Show comparable rates in </label>
+				<select id="market_id" class="select_mkt" name="market_id" onChange="selectOnChange(this)"></select>
+				
+			</div>
+			
+		</div>
+	</div><!-- .products_nav -->
+	
+	<div class="row footer_row">
+		<div class="credit_dt"><strong>Source:</strong> <a href="https://www.datatrac.net" target="_blank">Datatrac</a></div>
+		<div id="details_main" class="details"></div>
+	</div>
+	
+	<div class="footnotes row">
+		<p><strong>APY</strong> = Annual Percentage Yield, <strong>APR</strong> = Annual Percentage Rate</p>
+	</div>
+
+</div><!-- .dt_api -->
+
+<div class="loading-overlay">
+	<div class="spinner">
+  		<div class="double-bounce1"></div>
+  		<div class="double-bounce2"></div>
+	</div>
+</div>
+	
+</body>
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/slick.min.1.8.0.js"></script>
+<script src="js/functionality.js"></script>
+</html>
